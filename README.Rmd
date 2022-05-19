@@ -36,6 +36,10 @@ library(ggplot2)
 
 elevators |>
   ggplot(aes(speed_fpm, capacity_lbs)) +
-  geom_point(alpha = 0.1)
+  geom_point(alpha = 0.1) +
+  annotate("point", 125, 3000, color = "red") +
+  annotate("segment", x = 1000, xend = 225, y = 25000, yend = 6000,
+           colour = "red", size = 1, arrow = arrow()) +
+  annotate("text", x = 1500, y = 28000, label = "RStudio Office", color = "red")
 ```
 
