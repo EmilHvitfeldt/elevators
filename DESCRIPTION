@@ -1,0 +1,14 @@
+Package: elevators
+Title: Data Package Containing Information About Elevators in NYC
+Version: 0.0.0.9000
+Authors@R: 
+    person("Emil", "Hvitfeldt", , "emilhhvitfeldt@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-0679-1945"))
+Description: Data package containing information about elevators in NYC from 2015.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.0
+Depends: 
+    R (>= 2.10)
+LazyData: true

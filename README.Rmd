@@ -1,0 +1,41 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# elevators
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+This data package contains a data set of the registered elevator devices in New York City provided by the Department of Buildings in response to a September 2015 FOIL request.
+
+## Installation
+
+You can install the development version of elevators like so:
+
+``` r
+remotes::install_github("emilhvitfeldt/elevators")
+```
+
+## Examples
+
+```{r, warning=FALSE}
+library(elevators)
+library(ggplot2)
+
+elevators |>
+  ggplot(aes(speed_fpm, capacity_lbs)) +
+  geom_point(alpha = 0.1)
+```
+
