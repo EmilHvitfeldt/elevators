@@ -13,6 +13,7 @@ elevators <- elevators_raw %>%
   filter(!is.na(DV_SPEED_FPM)) %>%
   select(-`Device Status`, -`...27`) %>%
   rename_all(str_remove, "DV_") %>%
-  rename_all(tolower)
+  rename_all(tolower) %>%
+  rename(device_type = `device type`)
 
 usethis::use_data(elevators, overwrite = TRUE)
