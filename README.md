@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# elevators
+# elevators <img src="man/figures/logo.png" align="right" height="280" />
 
 <!-- badges: start -->
 <!-- badges: end -->

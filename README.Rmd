@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# elevators
+# elevators <img src="man/figures/logo.png" align="right" height="280" />
 
 <!-- badges: start -->
 <!-- badges: end -->
