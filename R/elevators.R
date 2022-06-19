@@ -42,6 +42,7 @@
 #'   \item{floor_to}{Highest floor, not cleaned. Mixed formats}
 #'   \item{latitude}{Latitude of elevator}
 #'   \item{longitude}{Longitude of elevator}
+#'   \item{elevators_per_building}{number of elevators in building}
 #'   ...
 #' }
 #'

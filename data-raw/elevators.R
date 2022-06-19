@@ -94,4 +94,9 @@ elevators <- elevators_raw %>%
   )) %>%
   select(-status_date)
 
+
+elevators <- elevators %>% left_join(
+  count(elevators, bin, name = "elevators_per_building")
+)
+
 usethis::use_data(elevators, overwrite = TRUE)
