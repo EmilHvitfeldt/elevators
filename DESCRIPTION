@@ -12,6 +12,7 @@ RoxygenNote: 7.2.0.9000
 Depends: 
     R (>= 2.10)
 LazyData: true
+LazyDataCompression: xz
 URL: https://github.com/EmilHvitfeldt/elevators,
     https://emilhvitfeldt.github.io/elevators/
 BugReports: https://github.com/EmilHvitfeldt/elevators/issues

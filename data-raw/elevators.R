@@ -10,7 +10,7 @@ elevators_raw <- read_csv(
     ZIP_CODE = col_character()
   )
 )
-usethis::use_data(elevators_raw, overwrite = TRUE)
+usethis::use_data(elevators_raw, overwrite = TRUE, compress = "xz")
 
 unparsable <- function(x) {
   x <- suppressWarnings(parse_number(x))
@@ -99,4 +99,4 @@ elevators <- elevators %>% left_join(
   count(elevators, bin, name = "elevators_per_building")
 )
 
-usethis::use_data(elevators, overwrite = TRUE)
+usethis::use_data(elevators, overwrite = TRUE, compress = "xz")
