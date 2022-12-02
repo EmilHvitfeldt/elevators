@@ -30,16 +30,40 @@ remotes::install_github("emilhvitfeldt/elevators")
 
 ## Examples
 
+One of the fundamental characteristics about elevators is how fast they can go, and how much they can carry
+
 ```{r, warning=FALSE}
 library(elevators)
 library(ggplot2)
 
 elevators |>
   ggplot(aes(speed_fpm, capacity_lbs)) +
-  geom_point(alpha = 0.1) +
-  annotate("point", 125, 3000, color = "red") +
-  annotate("segment", x = 1000, xend = 225, y = 25000, yend = 6000,
-           colour = "red", size = 1, arrow = arrow()) +
-  annotate("text", x = 1500, y = 28000, label = "RStudio Office", color = "red")
+  geom_point(alpha = 0.1)
 ```
 
+In addition to `borough`, there are a number of geographical variables can would be useful to explore
+
+```{r}
+elevators |>
+  ggplot(aes(longitude, latitude, color = borough)) +
+  coord_map() +
+  geom_point(alpha = 0.1) +
+  theme_minimal()
+```
+
+We can also see where the different tall buildings are in Manhattan
+
+```{r, message=FALSE}
+library(tidyverse)
+
+elevators |>
+  filter(borough == "Manhattan") |>
+  mutate(floors = str_extract(floor_to, "\\d+"),
+         floors = as.numeric(floors)) |>
+  filter(!is.na(floors), floors < 100, floors > 0) |>
+  ggplot(aes(longitude, latitude, color = floors)) +
+  geom_point(alpha = 0.05) +
+  scale_color_viridis_c() +
+  theme_minimal() +
+  facet_wrap(~ cut_width(floors, width = 10, boundary = 0))
+```
